@@ -92,25 +92,6 @@ public class Main {
         return text;
     }
 
-    private static void printResults(Map<Character, String> codes, Map<Character, Double> probabilityOfSymbols){
-        for (Map.Entry<Character, String> value: codes.entrySet()) {
-            String key;
-            if (value.getKey() == 0){
-                key = "\"\"" + "\t";
-            } else if (value.getKey() == 13){
-                key = "\\r" + "\t";
-            } else if (value.getKey() == 10){
-                key = "\\n" + "\t";
-            } else if (value.getKey() == 32){
-                key = "space";
-            } else {
-                key = String.valueOf(value.getKey()) + "\t";
-            }
-            System.out.println(key + "\t" + probabilityOfSymbols.get(value.getKey()) + "\t" + value.getValue().length() + "\t"  + value.getValue());
-        }
-    }
-
-
     private static void printResults(TextAnalyzer analyzer, Map<Character, String> codes, Map<Character, Double> probabilityOfSymbols){
 
 
